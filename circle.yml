@@ -4,11 +4,11 @@ machine:
   services:
     - docker
 
-test:
-  override:
-    - docker build -t thing/CIRCLE_BRANCH .
-    - docker run --name CIRCLE_BRANCH thing/CIRCLE_BRANCH .
-    - make acceptance
+# test:
+#   override:
+#     - docker build -t thing/CIRCLE_BRANCH .
+#     - docker run --name CIRCLE_BRANCH thing/CIRCLE_BRANCH .
+#     - make acceptance
 #
 # deployment:
 #   docker:
