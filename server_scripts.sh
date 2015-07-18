@@ -1,5 +1,5 @@
 #! /bin/bash
 
-rails s &
+bundle exec rails s &
 echo "RAILS RUNNING"
-/usr/local/bin/lt --port 3000
+/usr/local/bin/lt --subdomain $CIRCLE_BRANCH --port 3000

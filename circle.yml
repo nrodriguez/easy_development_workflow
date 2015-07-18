@@ -1,19 +1,15 @@
 machine:
   ruby:
-    version: 2.2.2
+    version: 2.1.2
   services:
     - docker
-  # post:
-  #     - wget https://s3.amazonaws.com/build-tools-prd/ngrok.zip
-  #     - unzip ngrok.zip
-  #     - ./ngrok -authtoken $NGROK_TOKEN -log ngrok.log -subdomain=$CIRCLE_SHA1 9292:
-  #         background: true
 
 test:
   post:
     - docker build -t $CIRCLE_BRANCH .
     - docker run --name $CIRCLE_BRANCH $CIRCLE_BRANCH
     - docker ps -a
+
 # deployment:
 #   docker:
 #     branch: CIRCLE_BRANCH
